@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nostr Delegation Signer</title>
+        <link rel="stylesheet" href="./src/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Nostr Delegation Signer</h1>
+            <div class="security-notice">
+                <p class="warning">⚠️ Security Notice</p>
+                <p>This is the only place you should enter your nsec secret key. Never share or enter it on any other page on this website.</p>
+                <p>For enhanced security, you can run this tool locally too.</p>
+
+                <a href="https://github.com/Zaptomaterrr/dksigner" target="_blank">github.com/Zaptomaterrr/dksigner</a>
+            </div>
+            <div class="input-group">
+                <label for="delegation">Nostr Delegation Request:</label>
+                <input type="text" id="delegation" placeholder="nostr:delegation:4sdfsf3434...:kind=1&created_at>1674834236&created_at<1677426236" />
+            </div>
+            <div class="input-group">
+                <label for="secretKey">Nsec Secret Key:</label>
+                <input type="password" id="secretKey" placeholder="nsec1qwertyuihvcxrtyhjnbvcde4567ujbvde567uj" />
+            </div>
+            <button id="signButton">Sign</button>
+            <div class="result-container" id="resultContainer" style="display: none">
+                <p>Delegation Token:</p>
+                <div class="token-container">
+                    <input type="text" id="tokenResult" readonly />
+                    <button id="copyButton">Copy</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/nostr-tools/lib/nostr.bundle.js"></script>
+        <script type="module" src="./src/script.js"></script>
+    </body>
+</html>
